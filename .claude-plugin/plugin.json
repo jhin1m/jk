@@ -1,7 +1,7 @@
 {
   "name": "jk",
   "description": "Bộ workflow gọn cho Claude Code: plan, cook, fix, ask, brainstorm, review, git, scout, ui — kèm agent chia model theo việc (fable/opus/sonnet/haiku).",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "jhin1m"
   },

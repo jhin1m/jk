@@ -1,9 +1,8 @@
 ---
 name: think
-description: 'Kỷ luật suy luận kiểu Fable — chốt mục tiêu thật, giữ nhiều giả thuyết, phân loại mức chắc chắn của từng khẳng định, tự phản biện trước khi trả lời. Dùng cho chẩn đoán, quyết định kiến trúc, review, câu hỏi "trông đơn giản" mà sai thì tốn.'
+description: 'Kỷ luật suy luận — chốt mục tiêu thật, giữ nhiều giả thuyết, phân loại mức chắc chắn của từng khẳng định, tự phản biện trước khi trả lời. Dùng cho chẩn đoán, quyết định kiến trúc, review, câu hỏi "trông đơn giản" mà sai thì tốn.'
 when_to_use: '"suy nghĩ kỹ", "phân tích sâu", "chắc chưa", quyết định khó đảo ngược, sự cố production, khi đã thử 2 lần mà chưa ra.'
 argument-hint: "<câu hỏi | vấn đề>"
-model: fable
 effort: high
 ---
 

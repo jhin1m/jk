@@ -1,6 +1,6 @@
 # jk — bộ workflow gọn cho Claude Code
 
-10 skill, 5 agent, 2 hook. Chỉ gồm những quy trình dùng hằng ngày, mỗi bước cho chạy đúng model hợp với việc đó: **Fable** lo phần suy nghĩ, **Opus** lo review, **Sonnet** lo implement song song, **Haiku** lo việc vặt.
+10 skill, 5 agent, 2 hook. Chỉ gồm những quy trình dùng hằng ngày, Skill chạy theo model của session (thường là Opus); agent chia model theo việc: **Opus** review, **Sonnet** implement song song, **Haiku** việc vặt, **Fable** chỉ khi bị kẹt.
 
 ## Cài đặt
 
@@ -15,12 +15,12 @@ Cập nhật: `/plugin marketplace update jk`. Gỡ: `/plugin uninstall jk@jk`.
 
 | Lệnh | Việc | Model |
 |---|---|---|
-| `/jk:plan [--fast\|--hard] <việc>` | Scout → chốt yêu cầu → `plans/<ts>-<slug>/plan.md` + phases. `red-team`, `validate` | **Fable** |
+| `/jk:plan [--fast\|--hard] <việc>` | Scout → chốt yêu cầu → `plans/<ts>-<slug>/plan.md` + phases. `red-team`, `validate` | session; red-team → Fable |
 | `/jk:cook [--fast\|--auto\|--no-test] <plan\|việc>` | Implement → kiểm chứng không side-effect → review | session; phase song song → Sonnet |
 | `/jk:fix [--quick] <lỗi>` | Nguyên nhân gốc 6 điểm → sửa → chứng minh hết lỗi. 2 lần fail → hỏi Fable | session |
 | `/jk:ask <câu hỏi>` | Phân tích dựa trên code thật, chỉ đọc | session |
-| `/jk:brainstorm [--report] <vấn đề>` | Vấn đề trước giải pháp, 2–4 phương án, chốt 1 | **Fable** |
-| `/jk:think <vấn đề>` | Kỷ luật suy luận: mục tiêu thật, ≥ 2 giả thuyết, phân loại khẳng định, tự phản biện | **Fable** |
+| `/jk:brainstorm [--report] <vấn đề>` | Vấn đề trước giải pháp, 2–4 phương án, chốt 1 | session |
+| `/jk:think <vấn đề>` | Kỷ luật suy luận: mục tiêu thật, ≥ 2 giả thuyết, phân loại khẳng định, tự phản biện | session |
 | `/jk:review [--pending\|<commit>\|#PR\|branch]` | Review 2 tầng (đúng spec, chất lượng), tự xác minh lại phát hiện | Opus (agent) |
 | `/jk:git cm\|cp\|pr\|merge` | Commit tách nhóm, quét secret, push, PR | Haiku (agent) |
 | `/jk:scout <việc>` | Dò file song song, trả bản đồ | Haiku (agent) |
@@ -40,9 +40,11 @@ Luồng thường dùng: `/jk:plan` → `/jk:cook` → `/jk:review` → `/jk:git
 
 ## Model chạy thế nào
 
-- Skill **mặc định chạy trên model của session** (`/model`). Skill có `model: fable` (plan, brainstorm, think) chỉ đổi model **trong lượt đó**; sang prompt sau session về lại model cũ.
+- Mọi skill **chạy trên model của session** (`/model`). Gặp vấn đề thật sự khó → `/model fable` rồi chạy `/jk:plan` / `/jk:think`; xong thì `/model opus`.
+- Fable tự động chỉ dùng qua agent `jk:advisor`: `/jk:fix` hỏng 2 lần, `/jk:plan --hard` / `red-team`, `/jk:cook` gặp ngã rẽ thiết kế ngoài plan.
+- Muốn một skill luôn chạy model cố định: thêm `model: <tên>` vào frontmatter — chỉ có hiệu lực trong lượt đó.
 - **Agent** chạy model riêng ghi trong frontmatter, ngữ cảnh riêng, không thấy cuộc trò chuyện. Nên việc giao agent phải có prompt tự đủ.
-- Tài khoản không có Fable thì Claude Code giữ model hiện tại cho skill, còn agent `advisor` báo lỗi. Khi đó đổi `model: fable` thành `opus` trong các file tương ứng.
+- Tài khoản không có Fable → đổi `model: fable` thành `opus` trong `agents/advisor.md`.
 
 ## Hook
 

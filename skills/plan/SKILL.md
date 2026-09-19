@@ -1,9 +1,8 @@
 ---
 name: plan
-description: 'Lập kế hoạch triển khai trước khi code — scout codebase, chốt yêu cầu chính xác, thiết kế giải pháp, ghi plan.md + phase files trong plans/. Chạy trên Fable. Dùng khi việc chạm nhiều file, có rủi ro, hoặc chưa rõ cách làm.'
+description: 'Lập kế hoạch triển khai trước khi code — scout codebase, chốt yêu cầu chính xác, thiết kế giải pháp, ghi plan.md + phase files trong plans/. Dùng khi việc chạm nhiều file, có rủi ro, hoặc chưa rõ cách làm.'
 when_to_use: '"lên plan", "lập kế hoạch", "thiết kế cách làm", trước tính năng/refactor lớn. Subcommand: red-team, validate.'
 argument-hint: "[--fast|--hard] <việc cần làm>  |  red-team <plan-dir>  |  validate <plan-dir>"
-model: fable
 effort: high
 ---
 
