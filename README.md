@@ -1,6 +1,6 @@
 # jk — bộ workflow gọn cho Claude Code
 
-10 skill, 5 agent, 2 hook. Chỉ gồm những quy trình dùng hằng ngày, Skill chạy theo model của session (thường là Opus); agent chia model theo việc: **Opus** review, **Sonnet** implement song song, **Haiku** việc vặt, **Fable** chỉ khi bị kẹt.
+10 skill, 5 agent, 2 hook. Chỉ gồm những quy trình dùng hằng ngày. Skill chạy theo model của session (thường là Opus); agent chia model theo việc: **Opus** review, **Sonnet** implement song song, **Haiku** việc vặt, **Fable** chỉ khi bị kẹt.
 
 ## Cài đặt
 
