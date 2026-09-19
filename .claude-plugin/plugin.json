@@ -1,0 +1,11 @@
+{
+  "name": "jk",
+  "description": "Bộ workflow gọn cho Claude Code: plan, cook, fix, ask, brainstorm, review, git, scout, ui — kèm agent chia model theo việc (fable/opus/sonnet/haiku).",
+  "version": "0.1.0",
+  "author": {
+    "name": "jhin1m"
+  },
+  "repository": "https://github.com/jhin1m/jk",
+  "license": "MIT",
+  "keywords": ["workflow", "skills", "agents", "planning"]
+}
