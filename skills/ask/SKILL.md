@@ -1,7 +1,7 @@
 ---
 name: ask
-description: Trả lời câu hỏi kỹ thuật/kiến trúc dựa trên code thật của repo — chỉ phân tích, không sửa file. Dùng khi muốn hiểu, so sánh, đánh giá trước khi quyết định.
-when_to_use: "giải thích", "cái này hoạt động thế nào", "nên dùng X hay Y", "có ổn không", hỏi đáp không kèm yêu cầu sửa.
+description: 'Trả lời câu hỏi kỹ thuật/kiến trúc dựa trên code thật của repo — chỉ phân tích, không sửa file. Dùng khi muốn hiểu, so sánh, đánh giá trước khi quyết định.'
+when_to_use: '"giải thích", "cái này hoạt động thế nào", "nên dùng X hay Y", "có ổn không", hỏi đáp không kèm yêu cầu sửa.'
 argument-hint: "<câu hỏi>"
 disallowed-tools: Edit Write NotebookEdit
 ---

@@ -1,7 +1,7 @@
 ---
 name: scout
-description: Dò codebase tìm file liên quan tới một việc, bằng agent haiku rẻ chạy song song. Trả về bản đồ file + pattern, không sửa gì.
-when_to_use: "tìm file", "code X nằm ở đâu", "scout", "liệt kê file liên quan", trước khi làm ở vùng code lạ.
+description: 'Dò codebase tìm file liên quan tới một việc, bằng agent haiku rẻ chạy song song. Trả về bản đồ file + pattern, không sửa gì.'
+when_to_use: '"tìm file", "code X nằm ở đâu", "scout", "liệt kê file liên quan", trước khi làm ở vùng code lạ.'
 argument-hint: "<việc cần tìm>"
 ---
 

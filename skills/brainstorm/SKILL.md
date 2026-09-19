@@ -1,7 +1,7 @@
 ---
 name: brainstorm
-description: Brainstorm giải pháp với phân tích đánh đổi thẳng thắn, chạy trên Fable. Kiểm tra vấn đề trước khi bàn giải pháp, phản biện ý tưởng của người dùng khi cần, chốt một hướng. Không sửa code.
-when_to_use: "brainstorm", "bàn cách làm", "có nên", "nghĩ giúp phương án", "ý tưởng này ổn không", trước /jk:plan khi hướng đi chưa rõ.
+description: 'Brainstorm giải pháp với phân tích đánh đổi thẳng thắn, chạy trên Fable. Kiểm tra vấn đề trước khi bàn giải pháp, phản biện ý tưởng của người dùng khi cần, chốt một hướng. Không sửa code.'
+when_to_use: '"brainstorm", "bàn cách làm", "có nên", "nghĩ giúp phương án", "ý tưởng này ổn không", trước /jk:plan khi hướng đi chưa rõ.'
 argument-hint: "[--report] <vấn đề | ý tưởng>"
 model: fable
 effort: high

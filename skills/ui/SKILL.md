@@ -1,7 +1,7 @@
 ---
 name: ui
-description: Làm và review giao diện có chủ đích — chốt hướng thẩm mỹ trước khi code, bám design system có sẵn của repo, kiểm tra accessibility, responsive, trạng thái tương tác. Tránh giao diện "AI generic".
-when_to_use: "làm UI", "thiết kế màn hình", "đẹp hơn", "review giao diện", "responsive", "dark mode", component mới.
+description: 'Làm và review giao diện có chủ đích — chốt hướng thẩm mỹ trước khi code, bám design system có sẵn của repo, kiểm tra accessibility, responsive, trạng thái tương tác. Tránh giao diện "AI generic".'
+when_to_use: '"làm UI", "thiết kế màn hình", "đẹp hơn", "review giao diện", "responsive", "dark mode", component mới.'
 argument-hint: "[review] <màn hình | component | mô tả>"
 ---
 

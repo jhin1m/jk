@@ -1,7 +1,7 @@
 ---
 name: review
-description: Review code bằng agent reviewer (opus) chạy ngữ cảnh riêng — thay đổi chưa commit, một commit, một PR, hoặc cả nhánh so với main. Tìm bug, regression, bảo mật, vi phạm quy ước, có kịch bản cụ thể.
-when_to_use: "review", "xem lại code", "check trước khi merge", "review PR #12", "review commit abc123".
+description: 'Review code bằng agent reviewer (opus) chạy ngữ cảnh riêng — thay đổi chưa commit, một commit, một PR, hoặc cả nhánh so với main. Tìm bug, regression, bảo mật, vi phạm quy ước, có kịch bản cụ thể.'
+when_to_use: '"review", "xem lại code", "check trước khi merge", "review PR #12", "review commit abc123".'
 argument-hint: "[--pending | <commit> | #<PR> | branch]"
 ---
 

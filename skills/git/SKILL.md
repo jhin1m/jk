@@ -1,7 +1,7 @@
 ---
 name: git
-description: Thao tác git qua agent haiku rẻ — commit theo Conventional Commits (tự tách theo nhóm), push, tạo PR, merge. Luôn quét secret trước khi commit.
-when_to_use: "commit", "push", "tạo PR", "merge nhánh", "cm", "cp".
+description: 'Thao tác git qua agent haiku rẻ — commit theo Conventional Commits (tự tách theo nhóm), push, tạo PR, merge. Luôn quét secret trước khi commit.'
+when_to_use: '"commit", "push", "tạo PR", "merge nhánh", "cm", "cp".'
 argument-hint: "cm | cp | pr [to] [from] | merge [to] [from]"
 ---
 

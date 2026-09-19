@@ -1,7 +1,7 @@
 ---
 name: cook
-description: Triển khai code theo plan có sẵn hoặc yêu cầu đã rõ — implement, kiểm chứng không side-effect, review bằng agent. Tự chia việc: session tự làm phần cần ngữ cảnh, phase độc lập giao agent sonnet chạy song song.
-when_to_use: "làm đi", "implement", "code theo plan", "thực thi plan", "/jk:cook plans/...".
+description: 'Triển khai code theo plan có sẵn hoặc yêu cầu đã rõ — implement, kiểm chứng không side-effect, review bằng agent. Tự chia việc: session tự làm phần cần ngữ cảnh, phase độc lập giao agent sonnet chạy song song.'
+when_to_use: '"làm đi", "implement", "code theo plan", "thực thi plan", "/jk:cook plans/...".'
 argument-hint: "[--fast|--auto|--no-test] <plan-dir | mô tả việc>"
 ---
 

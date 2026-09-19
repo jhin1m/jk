@@ -1,7 +1,7 @@
 ---
 name: fix
-description: Sửa bug, test fail, type/lint error, lỗi CI theo quy trình bắt buộc tìm nguyên nhân gốc có bằng chứng trước khi sửa, rồi chứng minh hết lỗi và không side-effect.
-when_to_use: "bị lỗi", "không chạy", "sửa lỗi", "debug", "tại sao X", "test fail", "CI đỏ", dán stack trace/log.
+description: 'Sửa bug, test fail, type/lint error, lỗi CI theo quy trình bắt buộc tìm nguyên nhân gốc có bằng chứng trước khi sửa, rồi chứng minh hết lỗi và không side-effect.'
+when_to_use: '"bị lỗi", "không chạy", "sửa lỗi", "debug", "tại sao X", "test fail", "CI đỏ", dán stack trace/log.'
 argument-hint: "[--quick] <mô tả lỗi | log | stack trace | link CI>"
 ---
 

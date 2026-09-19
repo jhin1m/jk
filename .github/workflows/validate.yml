@@ -1,0 +1,30 @@
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  frontmatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # `claude plugin validate` không parse YAML của SKILL.md; frontmatter lỗi làm
+      # Claude Code bỏ qua name/model/description mà không báo gì.
+      - name: Parse YAML frontmatter
+        run: |
+          pip install --quiet pyyaml
+          python3 - <<'EOF'
+          import glob, sys, yaml
+          bad = 0
+          for f in sorted(glob.glob('skills/*/SKILL.md') + glob.glob('agents/*.md')):
+              parts = open(f, encoding='utf-8').read().split('---', 2)
+              try:
+                  d = yaml.safe_load(parts[1])
+                  assert isinstance(d, dict) and d.get('name') and d.get('description'), 'thiếu name/description'
+                  print('ok  ', f)
+              except Exception as e:
+                  bad += 1
+                  print('FAIL', f, '-', str(e).splitlines()[0])
+          sys.exit(1 if bad else 0)
+          EOF
+      - name: Hook scripts parse
+        run: for f in hooks/*.cjs; do node --check "$f"; done
