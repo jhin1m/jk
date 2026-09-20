@@ -9,7 +9,7 @@
       "name": "jk",
       "source": "./",
       "description": "Bộ workflow gọn cho Claude Code với agent chia model theo việc.",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "author": {
         "name": "jhin1m"
       }
