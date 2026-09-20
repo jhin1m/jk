@@ -29,9 +29,18 @@ Việc: $ARGUMENTS
 | Theme | dark mode (nếu repo có) không mất tương phản, không màu hardcode |
 | Hiệu năng | ảnh có kích thước; không animation chặn tương tác; tôn trọng `prefers-reduced-motion` |
 
+Chỉnh một component có sẵn (đổi token, màu, khoảng cách, thêm một trạng thái) → chỉ chạy hai hàng **Accessibility** và **Layout**. Màn hình mới, đổi layout, hoặc `review` → chạy cả bảng.
+
 Dấu hiệu "AI generic" cần tránh: gradient tím-xanh vô cớ, bóng đổ + bo góc lớn khắp nơi, emoji làm icon, mọi thứ căn giữa, card lồng card.
 
 ## 4. Kiểm chứng bằng mắt
-Có thể chạy app → mở trình duyệt, chụp màn hình ở 375px và 1280px, sáng + tối. Không tuyên bố "đẹp/đúng" khi chưa nhìn bản render.
+Không tuyên bố "đẹp/đúng" khi chưa nhìn bản render. Chụp bao nhiêu ảnh thì theo quy mô:
+
+| Thay đổi | Ảnh cần chụp |
+|---|---|
+| Một component, không đổi layout | 1 ảnh ở khổ liên quan; có đụng màu → thêm ảnh theme còn lại |
+| Màn hình mới hoặc đổi layout | 375px + 1280px, sáng + tối |
+
+Không chạy được app → nói rõ "chưa nhìn bản render", đừng đoán.
 
 `review` → báo cáo theo bảng trên: vấn đề · `file:line` · gợi ý sửa, xếp nặng → nhẹ.

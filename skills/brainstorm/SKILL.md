@@ -22,7 +22,9 @@ Thẳng thắn quan trọng hơn dễ nghe. Ý tưởng có vấn đề → nói
 Thiếu thông tin quyết định hướng đi (quy mô, ngân sách, ưu tiên UX vs tốc độ) → hỏi bằng AskUserQuestion, tối đa 3 câu mỗi lượt. Không hỏi thứ tự tra được.
 
 ## 3. Phương án
-2–4 phương án thật sự khác nhau (không phải biến thể của cùng một ý). Mỗi cái:
+Câu hỏi thật ra chỉ có một đáp án đúng (repo đã có sẵn cách làm, hoặc thư viện đang dùng đã giải quyết) → nói thẳng đáp án đó và lý do, **không dựng phương án giả để có đủ bảng**. Ba phương án trong đó hai cái rõ ràng tệ hơn là trang trí, không phải phân tích.
+
+Còn lại: 2–4 phương án thật sự khác nhau (không phải biến thể của cùng một ý). Mỗi cái:
 - Cách hoạt động (1–2 câu)
 - Được gì / mất gì · chi phí làm · chi phí vận hành · độ khó đảo ngược
 - Rủi ro lớn nhất

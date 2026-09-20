@@ -9,7 +9,14 @@ argument-hint: "[--quick] <mô tả lỗi | log | stack trace | link CI>"
 
 Lỗi: $ARGUMENTS
 
-`--quick`: lỗi hiển nhiên (typo, import sai, type/lint error rõ ràng) → rút gọn bước 1–2 thành xác định file + nguyên nhân 1 câu, sửa, kiểm chứng.
+## Mức (tự suy ra, không cần cờ)
+
+| Dấu hiệu | Chẩn đoán |
+|---|---|
+| Lỗi tự nói ra nguyên nhân: typo, import sai, type/lint chỉ đúng một dòng, thiếu key config | Xác định file + nguyên nhân 1 câu → sửa → chạy lại đúng lệnh đã báo lỗi. Bỏ bước 1–2 |
+| Còn lại | Đủ bước 1–5 |
+
+`--quick` ép mức nhanh. Lỗi chỉ *trông có vẻ* hiển nhiên (flaky, lúc được lúc không, không tái hiện ổn định) thì **không** thuộc hàng trên.
 
 **Cấm đề xuất hay viết bản sửa trước khi xong bước 1–2.** Sửa triệu chứng = thất bại.
 
@@ -39,9 +46,11 @@ Sửa tại nguyên nhân, không tại triệu chứng. Thay đổi nhỏ nhấ
 ## 4. Kiểm chứng + phòng tái phát
 1. Chạy lại đúng lệnh tái hiện ở bước 2 → so output trước/sau.
 2. Có test framework → thêm test fail khi chưa sửa, pass khi đã sửa.
-3. Chạy test trong toàn bộ phạm vi ảnh hưởng (mục 6), không chỉ file đã sửa.
+3. Chạy test trong phạm vi ảnh hưởng đã xác định ở mục 6 — đúng vùng đó, không chỉ file đã sửa và cũng không phải cả bộ.
 4. Type-check/lint/build không có lỗi mới. Contract công khai không đổi.
-5. Sửa > 1 file hoặc chạm logic nghiệp vụ → spawn `jk:reviewer` kiểm: đã sửa đúng gốc chưa, có vỡ gì trong phạm vi ảnh hưởng không.
+5. Mức **M/L** (≥ 3 file, hoặc chạm logic nghiệp vụ/auth/tiền/dữ liệu, hoặc đổi contract) → spawn `jk:reviewer` kiểm: đã sửa đúng gốc chưa, có vỡ gì trong phạm vi ảnh hưởng không. Mức **S** → tự đọc lại diff.
+
+Điểm 1 là bắt buộc ở mọi mức — không có nó thì không biết đã sửa được hay chưa.
 
 Side-effect → DỪNG, hỏi người dùng với 2–4 lựa chọn (revert thử hướng khác / thu hẹp phạm vi sửa / cập nhật chỗ phụ thuộc / chấp nhận). Không vá lặng lẽ.
 

@@ -12,10 +12,16 @@ effort: high
 
 Kết quả là **file plan**, không phải code. Không sửa code trong skill này.
 
+## 0. Việc này có đáng một plan file không?
+
+Ước lượng mức việc trước khi dựng thư mục. **Mức S** (≤ 2 file, không đổi contract công khai, không chạm auth/tiền/dữ liệu/migration) → **không tạo file**: trả lời ngay trong chat bằng 3–5 gạch đầu dòng (làm gì · file nào · nghiệm thu là gì · rủi ro nếu có), rồi đề xuất `/jk:cook`.
+
+Chỉ tạo `plans/<ts>-<slug>/` khi: mức M/L, hoặc việc kéo dài qua nhiều phiên, hoặc người dùng yêu cầu rõ file plan. Một thư mục plan cho việc sửa 2 file là rác cho lần dọn sau, không phải kỷ luật.
+
 ## Chế độ
 | Cờ | Research | Red-team | Dùng khi |
 |---|---|---|---|
-| `--fast` | bỏ | bỏ | việc nhỏ, vùng code đã quen |
+| `--fast` | bỏ | bỏ | mức M ở vùng code đã quen (mức S thì dừng ở bước 0, không vào đây) |
 | (mặc định) | scout | bỏ | đa số trường hợp |
 | `--hard` | scout + docs/web khi cần | có (agent `jk:advisor`) | auth, thanh toán, dữ liệu, API công khai, hạ tầng, ảnh hưởng rộng |
 

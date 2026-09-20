@@ -28,6 +28,20 @@ Cập nhật: `/plugin marketplace update jk`. Gỡ: `/plugin uninstall jk@jk`.
 
 Luồng thường dùng: `/jk:plan` → `/jk:cook` → `/jk:review` → `/jk:git cp`.
 
+## Mức việc
+
+Các skill tự co giãn theo quy mô thay đổi, **không cần gõ cờ**. Mức suy ra từ chính diff:
+
+| Mức | Dấu hiệu | Hệ quả |
+|---|---|---|
+| **S** | ≤ 2 file · không đổi contract công khai · không chạm auth/tiền/dữ liệu/migration | `plan` không tạo file, trả lời thẳng trong chat · `cook` chạy test phủ file đã sửa rồi dừng, không spawn reviewer · `review` tự đọc |
+| **M** | 3–8 file, hoặc đổi contract nội bộ, hoặc chạm logic nghiệp vụ | Kiểm chứng giới hạn ở module chạm + nơi gọi · reviewer khi chạm logic nghiệp vụ |
+| **L** | > 8 file, hoặc đổi contract công khai, hoặc chạm auth/thanh toán/dữ liệu người dùng/migration/hạ tầng | Đủ 5 điểm kiểm chứng · luôn spawn reviewer |
+
+Một dòng sửa trong vùng L vẫn là L. Cờ (`--fast`, `--no-test`, `--quick`, `--hard`) chỉ để ghi đè khi muốn khác mặc định.
+
+Quy tắc đi kèm: đã chạy một lệnh kiểm chứng trong phiên và từ đó chỉ đổi thứ không ảnh hưởng tới nó → nêu lại kết quả cũ, **không chạy lại**. `cook` có bảng "Chống làm quá" liệt kê các kiểu làm thừa hay gặp.
+
 ## Agent
 
 | Agent | Model | Vai trò |
